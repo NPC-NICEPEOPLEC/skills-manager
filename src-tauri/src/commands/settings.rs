@@ -87,6 +87,24 @@ pub async fn set_settings(
     Ok(())
 }
 
+/// Inspect an existing library without changing the live repository or database.
+#[tauri::command]
+pub async fn preview_existing_library(
+    path: String,
+    store: State<'_, Arc<SkillStore>>,
+) -> Result<crate::core::library_preview::LibraryPreview, AppError> {
+    let store = store.inner().clone();
+    tauri::async_runtime::spawn_blocking(move || {
+        let roots = crate::core::tool_adapters::all_tool_adapters(&store)
+            .iter()
+            .flat_map(|adapter| adapter.all_scan_dirs())
+            .collect::<Vec<_>>();
+        crate::core::library_preview::inspect_library(std::path::Path::new(&path), &roots)
+            .map_err(AppError::io)
+    })
+    .await?
+}
+
 #[tauri::command]
 pub fn get_central_repo_path() -> String {
     central_repo::base_dir().to_string_lossy().to_string()

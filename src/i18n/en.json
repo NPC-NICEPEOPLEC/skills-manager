@@ -1157,5 +1157,19 @@
     "gotIt": "Got it",
     "fullChangelog": "Full changelog",
     "close": "Close"
+  },
+  "libraryPreview": {
+    "title": "Inspect an existing library",
+    "failed": "Could not inspect this library.",
+    "description": "Preview the Skill entities and links in a library you already have. This check does not import, move, delete, or change the current library.",
+    "folder": "Library folder",
+    "inspect": "Inspect library",
+    "loading": "Inspecting…",
+    "summary": "{{skills}} Skill entities · {{connections}} existing links",
+    "connectionScope": "Counts unique links in the configured agent scan folders. This is not a compatibility or dependency test.",
+    "incomplete": "{{count}} paths could not be read or resolved. Connection counts may be incomplete.",
+    "details": "View entities and connections",
+    "links": "{{count}} links",
+    "exclusions": "View excluded or unreadable paths"
   }
 }

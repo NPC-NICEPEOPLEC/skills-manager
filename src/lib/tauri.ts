@@ -863,3 +863,16 @@ export const updateGlobalLocalSkillFromCenter = (agent: string, skillRelativePat
 
 export const deleteGlobalLocalSkill = (agent: string, skillRelativePath: string) =>
   invoke<void>("delete_global_local_skill", { agent, skillRelativePath });
+
+/** Read-only preview; this does not import, adopt, or change the active library. */
+export interface ExistingLibraryPreview {
+  root_path: string;
+  skills_path: string;
+  skill_count: number;
+  connection_count: number;
+  skills: { name: string; central_path: string; connections: string[] }[];
+  excluded_paths: string[];
+  unreadable_paths: string[];
+}
+export const previewExistingLibrary = (path: string) =>
+  invoke<ExistingLibraryPreview>("preview_existing_library", { path });

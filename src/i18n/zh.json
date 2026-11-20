@@ -1157,5 +1157,19 @@
     "gotIt": "知道了",
     "fullChangelog": "查看完整更新日志",
     "close": "关闭"
+  },
+  "libraryPreview": {
+    "title": "检查已有主库",
+    "failed": "无法检查这个主库。",
+    "description": "预览已有主库中的 Skill 实体和连接。检查不会导入、移动、删除文件，也不会切换当前主库。",
+    "folder": "主库文件夹",
+    "inspect": "检查主库",
+    "loading": "正在检查…",
+    "summary": "{{skills}} 份 Skill 实体 · {{connections}} 条已有连接",
+    "connectionScope": "连接数按已配置的客户端扫描目录统计，同一路径只计一次；不代表运行依赖或客户端兼容性已验证。",
+    "incomplete": "有 {{count}} 个路径无法读取或解析，连接统计可能不完整。",
+    "details": "查看实体和连接明细",
+    "links": "{{count}} 条连接",
+    "exclusions": "查看排除或无法读取的路径"
   }
 }

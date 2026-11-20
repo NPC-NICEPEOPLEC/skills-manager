@@ -1054,6 +1054,7 @@ pub fn run() {
             // Settings
             commands::settings::get_settings,
             commands::settings::set_settings,
+            commands::settings::preview_existing_library,
             commands::settings::get_central_repo_path,
             commands::settings::get_central_repo_path_override,
             commands::settings::get_central_repo_pending_path,

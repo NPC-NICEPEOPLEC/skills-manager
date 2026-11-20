@@ -58,6 +58,7 @@ import { useNavigate } from "react-router-dom";
 import { cn, compactHomePath } from "../utils";
 import { useApp } from "../context/AppContext";
 import { useThemeContext } from "../context/ThemeContext";
+import { LibraryPreviewPanel } from "../components/LibraryPreviewPanel";
 import { AgentIcon } from "../components/AgentIcon";
 import { ToggleSwitch } from "../components/ToggleSwitch";
 import { WhatsNewDialog } from "../components/WhatsNewDialog";
@@ -1401,6 +1402,8 @@ export function Settings() {
                 </div>
               )}
             </div>
+
+            <LibraryPreviewPanel />
 
             {/* Sync mode */}
             <div className="flex flex-wrap items-start justify-between gap-3 px-5 py-4">
